@@ -93,3 +93,12 @@ export const createTRPCRouter = t.router;
  * are logged in.
  */
 export const publicProcedure = t.procedure;
+
+const timingMiddleware = t.middleware(async ({ ctx, next }) => {
+  console.time("timingMiddleware");
+  const res = await next({ ctx });
+  console.timeEnd("timingMiddleware");
+  return res;
+});
+
+export const timedProcedure = t.procedure.use(timingMiddleware);

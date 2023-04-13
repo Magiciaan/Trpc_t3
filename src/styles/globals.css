@@ -14,3 +14,11 @@ a {
 * {
   box-sizing: border-box;
 }
+ 
+.btn-container {
+  display: flex;
+  width: 100dvw;
+  height: 100dvh;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(97, 46, 97)}
